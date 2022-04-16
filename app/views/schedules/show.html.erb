@@ -3,4 +3,5 @@
 <p><%= "time: " + @schedule.time.to_s %></p>
 <p><%= "total: " + @schedule.total.to_s %></p> 
 
-<%= link_to "edit schedule", edit_schedule_path %>
+<%= link_to "edit schedule", edit_schedule_path %> |
+<%= button_to "Destroy", schedule_path(@schedule), method: :delete %></li>

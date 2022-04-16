@@ -40,6 +40,13 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def destroy
+    @schedule = current_user.schedules.find(params[:id])
+    @schedule.destroy
+
+    redirect_to root_path, status: :see_other
+  end
+
   private
   def schedule_params
     params.require(:schedule).permit(:date, :time, :total)
