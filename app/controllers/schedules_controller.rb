@@ -4,6 +4,8 @@ class SchedulesController < ApplicationController
   def index
     if user_signed_in?
       @schedules = current_user.schedules
+      # @schedules = Schedule.all
+    end
   end
 
   def new
@@ -17,7 +19,6 @@ class SchedulesController < ApplicationController
       redirect_to root_path
     else
         render :new, status: :unprocessable_entity
-    end
     end
   end
 
