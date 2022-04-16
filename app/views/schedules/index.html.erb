@@ -1,6 +1,3 @@
-<h1>Schedule#index</h1>
-<p>Find me in app/views/schedule/index.html.erb</p>
-
 <h1>Articles</h1>
 
 <% if @schedules.empty? %>
@@ -24,4 +21,7 @@
         <% end %>
     <table>
 <% end %>
+
+
+<%= link_to "Add Schedule", new_schedule_path  %>
     

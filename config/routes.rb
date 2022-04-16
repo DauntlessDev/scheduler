@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "schedule#index"
+  root "schedules#index"
 
   devise_for :users 
 
