@@ -1,19 +1,24 @@
 class ScheduleController < ApplicationController
+  before_action :authenticate_user!
+
+
   def index
-    # @schedules = Schedule.all(:conditions => ["user_id"])
     if user_signed_in?
       @schedules = current_user.schedules
-   else
-     @schedules = nil
-   end
   end
 
   def new
-    @schedule = current_user.schedules.create(schedule_params)
+    @schedule = current_user.schedules.new
   end
 
   def create
-    @schedule = current_user.schedules.create(schedule_params)
+    @schedule = current_user.schedules.new(schedule_params)
+    if @schedule.save
+      redirect_to @schedule
+   else
+      render :new, status: :unprocessable_entity
+   end
+    end
   end
 
   private

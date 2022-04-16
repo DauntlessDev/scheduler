@@ -3,9 +3,7 @@
 
 <h1>Articles</h1>
 
-<% if @schedule == nil %>
-    <%= "Please Login" %>
-<% elsif @schedules.empty? %>
+<% if @schedules.empty? %>
     <%= "Please Add Schedules" %>
 <% else %> <table>
         <% @schedules.each do |schedule| %>
