@@ -1,0 +1,29 @@
+<h1>Schedule#index</h1>
+<p>Find me in app/views/schedule/index.html.erb</p>
+
+<h1>Articles</h1>
+
+<% if @schedule == nil %>
+    <%= "Please Login" %>
+<% elsif @schedules.empty? %>
+    <%= "Please Add Schedules" %>
+<% else %> <table>
+        <% @schedules.each do |schedule| %>
+            <tr>
+                <td>
+                    <a href="/schedules/<%= schedule.id %>">
+                        <%= schedule.date %>
+                    </a>
+                </td>
+                <td>
+                        <%= schedule.time %>
+                </td>
+
+                <td>
+                        <%= schedule.total %>
+                </td>
+            </tr>
+        <% end %>
+    <table>
+<% end %>
+    
