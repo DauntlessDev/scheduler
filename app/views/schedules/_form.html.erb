@@ -3,16 +3,25 @@
   <div>
     <%= form.label :date %><br>
     <%= form.date_field :date %>
+    <% @schedule.errors.full_messages_for(:date).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
   </div>
 
   <div>
     <%= form.label :time %><br>
     <%= form.time_field :time %>
+    <% @schedule.errors.full_messages_for(:time).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
   </div>
 
   <div>
     <%= form.label :total %><br>
     <%= form.number_field :total, in: 300..3000 %>
+    <% @schedule.errors.full_messages_for(:total).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
   </div>
 
   <div>
