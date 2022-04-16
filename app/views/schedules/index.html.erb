@@ -11,13 +11,18 @@
                     </a>
                 </td>
                 <td>
-                        <%= schedule.time %>
+                    <%= schedule.time %>
                 </td>
 
                 <td>
-                        <%= schedule.total %>
+                    <%= schedule.total %>
+                </td>
+
+                <td>
+                    <%= link_to "check detailed", schedule %>
                 </td>
             </tr>
+
         <% end %>
     <table>
 <% end %>
